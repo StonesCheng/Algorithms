@@ -13,12 +13,12 @@ public class Merge {
             System.out.println(a[i]);
     }
     public static void main(String[] args) {
-        int[] a={7,6,5,4,3,2,1};
+        int[] a={10,9,8,7,6,5,4,3,2,1};
         aux=new int[a.length];
         for(int sz=1;sz<a.length;sz=sz+sz)
             for(int lo=0;lo<a.length-sz;lo+=sz+sz)
                 merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,a.length-1));
-        for(int i=0;i<a.length-1;i++)
+        for(int i=0;i<a.length;i++)
             System.out.println(a[i]);
     }
     public static void sort(int[]a,int lo,int hi){
