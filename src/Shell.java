@@ -10,15 +10,19 @@ public class Shell {
         int[] t = new int[n];
         for (int i = 0; i < n; i++)
             t[i] = scanner.nextInt();
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (t[j + 1] < t[j]) {
-                    int temp = t[j];
-                    t[j] = t[j + 1];
-                    t[j + 1] = temp;
+        int h = 1;
+        while (h < n / 3) h = 3 * h + 1;
+        while (h >= 1) {
+            for (int i = h; i < n; i++) {
+                for (int j = i; j >= h; j -= h) {
+                    if (t[j] < t[j - h]) {
+                        int temp = t[j];
+                        t[j] = t[j - h];
+                        t[j - h] = temp;
+                    }
                 }
             }
+            h=h/3;
         }
         for (int i = 0; i < n; i++)
             System.out.println(t[i]);
