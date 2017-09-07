@@ -1,3 +1,5 @@
+package algorithms;
+
 import java.util.Stack;
 
 public class test5 {

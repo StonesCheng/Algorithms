@@ -1,3 +1,5 @@
+package algorithms;
+
 import java.util.ArrayList;
 
 /**
@@ -31,11 +33,11 @@ public class test3 {
         }
         return temp;
     }
-    /*public static void test(ListNode listNode,ArrayList<Integer> temp){
+    /*public static void algorithms.test(ListNode listNode,ArrayList<Integer> temp){
         if(listNode==null)
             return ;
         if(listNode.next!=null){
-            test(listNode.next,temp);
+            algorithms.test(listNode.next,temp);
             temp.add(listNode.val);
         }
         else {

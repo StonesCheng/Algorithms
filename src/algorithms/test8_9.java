@@ -1,3 +1,5 @@
+package algorithms;
+
 public class test8_9 {
     public static void main(String[] args) {
         System.out.println(jumpFloor(3));

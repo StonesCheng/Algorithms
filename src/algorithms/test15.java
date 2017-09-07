@@ -1,3 +1,5 @@
+package algorithms;
+
 /**
  * Created by RayCheng on 2017/9/1.
  */
@@ -44,16 +46,16 @@ public class test15 {
             head=head.next;
         }
         ListNode first=temp.pop();
-        ListNode test=temp.pop();
-        first.next=test;
+        ListNode algorithms.test=temp.pop();
+        first.next=algorithms.test;
         while (!temp.isEmpty()){
-            test.next=temp.pop();
-            test=test.next;
+            algorithms.test.next=temp.pop();
+            algorithms.test=algorithms.test.next;
         }
         return first;
     }*/
     /* static  Stack<ListNode> temp=new Stack<>();
-    static  ListNode test=null;
+    static  ListNode algorithms.test=null;
     public static ListNode head1=null;
     public static ListNode ReverseList(ListNode head){
         ReverseList1(head);
@@ -66,12 +68,12 @@ public class test15 {
             ReverseList(head.next);
         else {
             head1=temp.pop();
-            test=temp.pop();
-            head1.next=test;
+            algorithms.test=temp.pop();
+            head1.next=algorithms.test;
         }
         if(!temp.isEmpty()) {
-            test.next=temp.pop();
-            test=test.next;
+            algorithms.test.next=temp.pop();
+            algorithms.test=algorithms.test.next;
         }
     }*/
 }
