@@ -1,28 +1,54 @@
 package algorithms;
 
+import java.util.Scanner;
+
 /**
  * Created by RayCheng on 2017/8/30.
  */
 public class test {
-    static volatile int i = 0;
-
-    public static class PlusTask implements Runnable {
-        public void run() {
-            for (int k = 0; k < 10000; k++)
-                synchronized (PlusTask.class) {
-                    i++;
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String in=scanner.nextLine();
+        System.out.println(Solution(in));
+    }
+    static int flag=0;
+    public static int Solution(String in){
+        char[] temp=in.toCharArray();
+        int match=temp.length/2;
+        int[] num=new int[match];
+        for(int i=0;i<match;i++)
+            num[i]=0;
+        solu(temp,num);
+        int sum=1;
+        for(int i=0;i<match;i++)
+            System.out.println(num[i]);
+        for(int i=0;i<match;i++)
+            if(num[i]==0)
+                break;
+            else
+                sum*=num[i];
+        return sum;
+    }
+    public static void solu(char[] in,int[] num){
+        for(int i=flag+1;i<in.length;i++){
+            if(in[i]==')'){
+                int b=1;
+                int test=0;
+                num[test]=1;
+                if(i+b>=in.length) break;
+                while(in[i+b]==')'){
+                    if(in.length-1-(i+b)>0) {
+                        num[test]++;
+                        b++;
+                    }
+                    else
+                        break;
                 }
-        }
-
-        public static void main(String[] args) throws InterruptedException {
-            Thread[] thread = new Thread[10];
-            for (int i = 0; i < 10; i++) {
-                thread[i] = new Thread(new PlusTask());
-                thread[i].start();
+                flag=i+b;
+                while(in[flag]!=')')
+                    flag++;
+                test++;
             }
-            for (int i = 0; i < 10; i++)
-                thread[i].join();
-            System.out.println(i);
         }
     }
 }
