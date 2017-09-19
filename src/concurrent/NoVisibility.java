@@ -1,25 +1,26 @@
 package concurrent;
 
-import javax.annotation.concurrent.GuardedBy;
 import javax.annotation.concurrent.ThreadSafe;
+import java.util.ArrayList;
 
 @ThreadSafe
 public class NoVisibility {
-    @GuardedBy("this") private static boolean ready;
-    private static int number;
+    private  static ArrayList<Integer> test=new ArrayList<>();
     private static class ReaderThread extends Thread{
         public void run(){
-            while (!ready)
-                Thread.yield();
-            System.out.println(number);
+            for(int i=0;i<test.size();i++){
+                test.remove(i);
+            }
         }
     }
 
     public static void main(String[] args) {
         new ReaderThread().start();
-        new ReaderThread().start();
-        number=42;
-        ready=true;
-
+        synchronized(test){
+            for(int i=test.size();i>0;i++){
+                System.out.println(test.get(i));
+                test.add(i);
+            }
+        }
     }
 }
