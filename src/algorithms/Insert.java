@@ -10,12 +10,21 @@ public class Insert {
         int [] t=new int[n];
         for(int i=0;i<n;i++)
             t[i]=scanner.nextInt();
-        for(int i=1;i<n;i++){
+        /*for(int i=1;i<n;i++){
             for(int j=i; j>0 && t[j]<t[j-1];j--){
                 int temp=t[j-1];
                 t[j-1]=t[j];
                 t[j]=temp;
             }
+        }*/
+        for(int i=1;i<n;i++){
+            int j=i;
+            int target=t[i];
+            while (j>0&&target<t[j-1]){
+                t[j]=t[j-1];
+                j--;
+            }
+            t[j]=target;
         }
         for(int i=0;i<n;i++)
             System.out.println(t[i]);

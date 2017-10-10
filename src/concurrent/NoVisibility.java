@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 @ThreadSafe
 public class NoVisibility {
-    private  static ArrayList<Integer> test=new ArrayList<>();
+    private  static ArrayList<Integer> test=new ArrayList<Integer>();
     private static class ReaderThread extends Thread{
         public void run(){
             for(int i=0;i<test.size();i++){

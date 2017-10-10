@@ -21,7 +21,7 @@ public class test3 {
         for (int i=0;i<test.size();i++)
             System.out.println(test.get(i));
     }
-    public static ArrayList<Integer> temp=new ArrayList<>();
+    public static ArrayList<Integer> temp=new ArrayList<Integer>();
     public  static  ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         if (listNode!=null) {
             if (listNode.next != null) {

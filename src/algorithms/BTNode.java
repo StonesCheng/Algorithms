@@ -8,8 +8,8 @@ public class BTNode {
     private BTNode parent;//父节点
 
     public BTNode(){
-        keys=new LinkedList<>();
-        childNodes=new ArrayList<>();
+        keys=new LinkedList<Integer>();
+        childNodes=new ArrayList<BTNode>();
     }
 
     public BTNode(BTNode parent){
@@ -55,7 +55,6 @@ public class BTNode {
         }
         children.addAll(children);
         Collections.sort(childNodes, new Comparator<BTNode>() {
-            @Override
             public int compare(BTNode o1, BTNode o2) {
                 return o1.getKeys().get(0).compareTo(o2.getKeys().get(0));
             }
@@ -114,7 +113,6 @@ public class BTNode {
         child.setParentNode(this);
         childNodes.add(child);
         Collections.sort(childNodes, new Comparator<BTNode>() {
-            @Override
             public int compare(BTNode o1, BTNode o2)
             {
                 return o1.getKeys().get(0).compareTo(o2.getKeys().get(0));

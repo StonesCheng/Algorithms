@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class FailFastTest {
-    private static List<Integer> list=new ArrayList<>();
+    private static List<Integer> list=new ArrayList<Integer>();
     private static class threadOne extends Thread{
         public void run(){
             Iterator<Integer> iterator=list.iterator();

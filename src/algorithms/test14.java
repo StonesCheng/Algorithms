@@ -17,7 +17,7 @@ public class test14 {
 
     }
     public ListNode FindKthToTail(ListNode head,int k) {
-        ArrayList<ListNode> temp=new ArrayList<>();
+        ArrayList<ListNode> temp=new ArrayList<ListNode>();
         ListNode test=head;
         if(test==null)
             return test;

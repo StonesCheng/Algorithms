@@ -3,8 +3,8 @@ package algorithms;
 import java.util.Stack;
 
 public class test5 {
-    Stack<Integer> stack1=new Stack<>();
-    Stack<Integer> stack2=new Stack<>();
+    Stack<Integer> stack1=new Stack<Integer>();
+    Stack<Integer> stack2=new Stack<Integer>();
     int length=0;
     public void push(int node){
         stack1.push(node);
